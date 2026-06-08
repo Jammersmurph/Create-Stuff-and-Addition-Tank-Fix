@@ -7,7 +7,6 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import net.swzo.createsa_tank_fix.capability.ModCapabilities;
 import net.swzo.createsa_tank_fix.config.CSACapacityConfig;
 import net.swzo.createsa_tank_fix.datagen.CuriosDataGenerator;
 import net.swzo.createsa_tank_fix.event.FuelingTankEventHandler;
@@ -23,7 +22,6 @@ public class CreateSATankFix {
     public CreateSATankFix(IEventBus modEventBus, ModContainer modContainer) {
         EVENT_BUS.register(FuelingTankEventHandler.class);
         modEventBus.addListener(this::setup);
-        modEventBus.addListener(ModCapabilities::register);
         modEventBus.addListener(this::gatherData);
     }
 
